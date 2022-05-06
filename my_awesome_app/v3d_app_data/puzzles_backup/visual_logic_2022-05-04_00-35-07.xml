@@ -1,0 +1,502 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="631.5" scrolly="372.50000000000006" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="561.3143162744964" scrolly="557.4554960090836" scale="0.6020640352916444">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="qm1YgBR^xo)GZ~0R5A2+" type="">fov</variable>
+      <variable id=")b.6j:A{TZ{:JNWXt|Eq" type="">x</variable>
+      <variable id="=(Ex+P#s;.)FDUWbsxpz" type="">y</variable>
+      <variable id="z~5qC@(GnhXqOpP^~{!k" type="">z</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="f{bvhmMoTlr//SwIoMWi" x="-550" y="-930">
+      <field name="VAR" id="qm1YgBR^xo)GZ~0R5A2+">fov</field>
+      <value name="VALUE">
+        <block type="math_number" id="oMB;5;pF/!w(M#acCV]M">
+          <field name="NUM">15</field>
+        </block>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="everyFrame" id="Ad+HGmfj2}HYf{4;yBo#" x="-790" y="-890">
+      <statement name="DO">
+        <block type="setCameraParam" id=",|Ly{:Kn[bGziey1p7Ws">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" type="FIELD_OF_VIEW"></mutation>
+          <field name="TYPE">FIELD_OF_VIEW</field>
+          <value name="FIELD_OF_VIEW">
+            <shadow type="math_number" id="E%dp3gqW+l`+t[L:_30,">
+              <field name="NUM">30</field>
+            </shadow>
+            <block type="variables_get" id="+}=X[+LthnN$WRZ2sne3">
+              <field name="VAR" id="qm1YgBR^xo)GZ~0R5A2+">fov</field>
+            </block>
+          </value>
+          <value name="OBJECT">
+            <shadow type="objectList" id="z-1?i)}PK/kcy=9OpTP#">
+              <field name="FIELDNAME">Camera</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="variables_set" id="+[PGHRxgcI2reW;F3ZO6">
+              <field name="VAR" id=")b.6j:A{TZ{:JNWXt|Eq">x</field>
+              <value name="VALUE">
+                <block type="lists_getIndex" id=",56IJ}S%?iNd)f*n{MUk">
+                  <mutation statement="false" at="true"/>
+                  <field name="MODE">GET</field>
+                  <field name="WHERE">FROM_START</field>
+                  <value name="VALUE">
+                    <block type="getCameraDirection" id="k[A:x)c2JNxWrjy8XauN">
+                      <field name="MOUSE_TOUCH">TRUE</field>
+                      <field name="INVERTED">TRUE</field>
+                    </block>
+                  </value>
+                  <value name="AT">
+                    <block type="math_number" id="|,[;4/xgomT:NgBnxY=,">
+                      <field name="NUM">0</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id="b2!RSO[_d0N.hph61n1y">
+                  <field name="VAR" id="=(Ex+P#s;.)FDUWbsxpz">y</field>
+                  <value name="VALUE">
+                    <block type="lists_getIndex" id="9H@|aH7h|SN|08jd)P|`">
+                      <mutation statement="false" at="true"/>
+                      <field name="MODE">GET</field>
+                      <field name="WHERE">FROM_START</field>
+                      <value name="VALUE">
+                        <block type="getCameraDirection" id="VfPT}=`c+_A1_n89,hSP">
+                          <field name="MOUSE_TOUCH">TRUE</field>
+                          <field name="INVERTED">TRUE</field>
+                        </block>
+                      </value>
+                      <value name="AT">
+                        <block type="math_number" id=",=_)#ic![vWgUrT7vXBE">
+                          <field name="NUM">1</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="variables_set" id="%lAwzs92[W:am($oHYZb">
+                      <field name="VAR" id="z~5qC@(GnhXqOpP^~{!k">z</field>
+                      <value name="VALUE">
+                        <block type="lists_getIndex" id="K~6wfFRkRi[37,Fz.:e}">
+                          <mutation statement="false" at="true"/>
+                          <field name="MODE">GET</field>
+                          <field name="WHERE">FROM_START</field>
+                          <value name="VALUE">
+                            <block type="getCameraDirection" id="@4aYofXuUmix!043692{">
+                              <field name="MOUSE_TOUCH">TRUE</field>
+                              <field name="INVERTED">TRUE</field>
+                            </block>
+                          </value>
+                          <value name="AT">
+                            <block type="math_number" id="3E~2PEpD^Xrebx($0*;G">
+                              <field name="NUM">2</field>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="variables_set" id="!ZG%L`#oqbAQSN#4vZRC">
+                          <field name="VAR" id=")b.6j:A{TZ{:JNWXt|Eq">x</field>
+                          <value name="VALUE">
+                            <block type="math_arithmetic" id="-4$g|HsOJR!1UdYcCT=J">
+                              <field name="OP">ADD</field>
+                              <value name="A">
+                                <shadow type="math_number" id="ZFn;1LD8%ygd:Z^#r?/.">
+                                  <field name="NUM">2</field>
+                                </shadow>
+                                <block type="getObjTransform" id="#cA-Ni9nXc7qn{HGdbr+">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" useworldspace="false"></mutation>
+                                  <field name="MODE">position</field>
+                                  <field name="COORD">x</field>
+                                  <value name="TARGETOBJ">
+                                    <shadow type="objectList" id="HW+Jh-*Nr4c:89w%N$s~">
+                                      <field name="FIELDNAME">Camera</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </value>
+                              <value name="B">
+                                <shadow type="math_number" id="B2iXR~=-D^*wU:Xd${V{">
+                                  <field name="NUM">2</field>
+                                </shadow>
+                                <block type="math_arithmetic" id="DtF`:cjK_o{Ma1Xpq-0#">
+                                  <field name="OP">MULTIPLY</field>
+                                  <value name="A">
+                                    <shadow type="math_number" id="_|,,0~xrH:*+eWn1xG7y">
+                                      <field name="NUM">2</field>
+                                    </shadow>
+                                    <block type="variables_get" id="1Ycr-1y}(ub,IyjJX2zA">
+                                      <field name="VAR" id=")b.6j:A{TZ{:JNWXt|Eq">x</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <shadow type="math_number" id="*SwV]YYy7=6hC=PwYB-U">
+                                      <field name="NUM">130</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="variables_set" id="(NHA#jp%+_H6pMy7Zww(">
+                              <field name="VAR" id="=(Ex+P#s;.)FDUWbsxpz">y</field>
+                              <value name="VALUE">
+                                <block type="math_arithmetic" id="1)!gQ4asjEYS{wT@cH9;">
+                                  <field name="OP">ADD</field>
+                                  <value name="A">
+                                    <shadow type="math_number">
+                                      <field name="NUM">2</field>
+                                    </shadow>
+                                    <block type="getObjTransform" id=".$na]#An;;acT~#E+tKv">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" useworldspace="false"></mutation>
+                                      <field name="MODE">position</field>
+                                      <field name="COORD">y</field>
+                                      <value name="TARGETOBJ">
+                                        <shadow type="objectList" id="o+m)KrQq_HP~(SG4sz9.">
+                                          <field name="FIELDNAME">Camera</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <shadow type="math_number">
+                                      <field name="NUM">2</field>
+                                    </shadow>
+                                    <block type="math_arithmetic" id=",JX?),:5FLh]2Nsiz(O`">
+                                      <field name="OP">MULTIPLY</field>
+                                      <value name="A">
+                                        <shadow type="math_number">
+                                          <field name="NUM">2</field>
+                                        </shadow>
+                                        <block type="variables_get" id="X(+br93m(yAeHauLA],Z">
+                                          <field name="VAR" id="=(Ex+P#s;.)FDUWbsxpz">y</field>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <shadow type="math_number" id="${Nn6U/X{UWAR-53/crd">
+                                          <field name="NUM">130</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="variables_set" id="c%,s!qPW3$ng[Q#3]Epu">
+                                  <field name="VAR" id="z~5qC@(GnhXqOpP^~{!k">z</field>
+                                  <value name="VALUE">
+                                    <block type="math_arithmetic" id="NQ-=[{G*$b?j^Sg7oCk-">
+                                      <field name="OP">ADD</field>
+                                      <value name="A">
+                                        <shadow type="math_number">
+                                          <field name="NUM">2</field>
+                                        </shadow>
+                                        <block type="getObjTransform" id="0=h|7dqaf{!:,F|.F|(o">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" useworldspace="false"></mutation>
+                                          <field name="MODE">position</field>
+                                          <field name="COORD">z</field>
+                                          <value name="TARGETOBJ">
+                                            <shadow type="objectList" id="U=@ndd$GggUUOC`1$^T6">
+                                              <field name="FIELDNAME">Camera</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <shadow type="math_number">
+                                          <field name="NUM">2</field>
+                                        </shadow>
+                                        <block type="math_arithmetic" id="i.Yi942tzg8_MsKH%(+j">
+                                          <field name="OP">MULTIPLY</field>
+                                          <value name="A">
+                                            <shadow type="math_number">
+                                              <field name="NUM">2</field>
+                                            </shadow>
+                                            <block type="variables_get" id="2?R(n~dX%BM|UsrSl)n+">
+                                              <field name="VAR" id="z~5qC@(GnhXqOpP^~{!k">z</field>
+                                            </block>
+                                          </value>
+                                          <value name="B">
+                                            <shadow type="math_number" id="n{^#B2GjZ?W/B$$.O9ED">
+                                              <field name="NUM">130</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="setObjTransform" id="gHdw!U!rMqesL)X%@mKh">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" usevectorslot="false" useworldspace="false"></mutation>
+                                      <field name="MODE">position</field>
+                                      <field name="OFFSET">FALSE</field>
+                                      <value name="TARGETOBJ">
+                                        <shadow type="objectList" id="yMN6.S]tnRPPx^L6^U7d">
+                                          <field name="FIELDNAME">Empty</field>
+                                        </shadow>
+                                      </value>
+                                      <value name="X">
+                                        <block type="variables_get" id="c:B~qWvlSI|(O4_M[Gn|">
+                                          <field name="VAR" id=")b.6j:A{TZ{:JNWXt|Eq">x</field>
+                                        </block>
+                                      </value>
+                                      <value name="Y">
+                                        <block type="variables_get" id="[_)PB[RA.e251K%b]f[_">
+                                          <field name="VAR" id="=(Ex+P#s;.)FDUWbsxpz">y</field>
+                                        </block>
+                                      </value>
+                                      <value name="Z">
+                                        <block type="variables_get" id="%h}?S;3dxqL_*,o@X![]">
+                                          <field name="VAR" id="z~5qC@(GnhXqOpP^~{!k">z</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="aeoN{VxLpT~`[b`-VT0:" x="-770" y="-430">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="wv:aJTsU/k=-@#2c_j*I">
+          <field name="FIELDNAME">Cube</field>
+        </shadow>
+      </value>
+      <statement name="DO">
+        <block type="controls_if" id="5a)(GZIsVub@nGmy%Fnl">
+          <value name="IF0">
+            <block type="logic_compare" id="#e1irqb/aglzXWYYfo8+">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="getCameraParam" id="5P0~f,]9cv9E`i*]K04W">
+                  <field name="TYPE">FIELD_OF_VIEW</field>
+                  <value name="OBJECT">
+                    <shadow type="objectList" id="ICKZ1tlyvx0F852R8qLO">
+                      <field name="FIELDNAME">Camera</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="}7)w}F}0uaDrL82cjAkJ">
+                  <field name="NUM">30</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="controls_whileUntil" id="s^FK7HSs5muP*j.rvs4b">
+              <field name="MODE">WHILE</field>
+              <value name="BOOL">
+                <block type="logic_compare" id="?ygxg{SCEk;MRb|bV]9_">
+                  <field name="OP">NEQ</field>
+                  <value name="A">
+                    <block type="getCameraParam" id="mx0O7hU6n4gdfD~8iBtw">
+                      <field name="TYPE">FIELD_OF_VIEW</field>
+                      <value name="OBJECT">
+                        <shadow type="objectList" id="bYqmV!X`RbO@B}X@=w%@">
+                          <field name="FIELDNAME">Camera</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <block type="math_number" id="v0kc|MN$W=,D`0bZ2Pul">
+                      <field name="NUM">15</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="setInterval" id="1oZaH(D*g:0Ovcjp8bsD">
+                  <value name="VALUE">
+                    <shadow type="math_number" id="eZ,YPeFN?dn~SY-m@0c.">
+                      <field name="NUM">0.01</field>
+                    </shadow>
+                  </value>
+                  <statement name="DO">
+                    <block type="math_change" id="Ol)D7!l68jV9!ZNss|SR">
+                      <field name="VAR" id="qm1YgBR^xo)GZ~0R5A2+">fov</field>
+                      <value name="DELTA">
+                        <shadow type="math_number" id="y{3K{A]A+5TLlJt;`xS=">
+                          <field name="NUM">-1</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="controls_if" id="I/^[m:czQfTq+cGmaHXE">
+                          <value name="IF0">
+                            <block type="logic_compare" id="n)0PAApD(J86{}86Gh%$">
+                              <field name="OP">LTE</field>
+                              <value name="A">
+                                <block type="getCameraParam" id="g*eTDW)u9753VLh-2+kh">
+                                  <field name="TYPE">FIELD_OF_VIEW</field>
+                                  <value name="OBJECT">
+                                    <shadow type="objectList" id="#_mp|D1)jWzb~:S41~??">
+                                      <field name="FIELDNAME">Camera</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </value>
+                              <value name="B">
+                                <block type="math_number" id="wf8YQ^/4P.h|f:5;jMJS">
+                                  <field name="NUM">16</field>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <statement name="DO0">
+                            <block type="variables_set" id="ekWS7^w[kcN,Ft.@1OGq">
+                              <field name="VAR" id="qm1YgBR^xo)GZ~0R5A2+">fov</field>
+                              <value name="VALUE">
+                                <block type="math_number" id="E{P9y5^t4QCY`A?o#Hn7">
+                                  <field name="NUM">15</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="controls_flow_statements" id="%F/[YJfhg8#{Z8*+B(}4">
+                                  <field name="FLOW">BREAK</field>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </statement>
+            </block>
+          </statement>
+          <next>
+            <block type="controls_if" id="EkTfx-6l#^AgA(8a]5Vx">
+              <value name="IF0">
+                <block type="logic_compare" id="T+FvjC~]`DEF!fg*EuVF">
+                  <field name="OP">EQ</field>
+                  <value name="A">
+                    <block type="getCameraParam" id="^36]68106nSP^iPJljw@">
+                      <field name="TYPE">FIELD_OF_VIEW</field>
+                      <value name="OBJECT">
+                        <shadow type="objectList" id="L~*0]F}!GUZWj_70=ve(">
+                          <field name="FIELDNAME">Camera</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <block type="math_number" id=";NNh5Iy0[(=)U]tLgusF">
+                      <field name="NUM">15</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <statement name="DO0">
+                <block type="controls_whileUntil" id="I@dZu5#m5`KgMH@:`Qou">
+                  <field name="MODE">WHILE</field>
+                  <value name="BOOL">
+                    <block type="logic_compare" id="os!GvN]}-.=_f(IhMLG)">
+                      <field name="OP">NEQ</field>
+                      <value name="A">
+                        <block type="getCameraParam" id="6#`TgXIciT~{i;ry+Zv;">
+                          <field name="TYPE">FIELD_OF_VIEW</field>
+                          <value name="OBJECT">
+                            <shadow type="objectList" id="-e@VR+RN#.obSC(]Na.Q">
+                              <field name="FIELDNAME">Camera</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </value>
+                      <value name="B">
+                        <block type="math_number" id="#CZYo)cP*2w~e~ekj%NN">
+                          <field name="NUM">30</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="setInterval" id="jK2(/hQ}ef^dq+Xl45ob">
+                      <value name="VALUE">
+                        <shadow type="math_number" id="9{afL%LI!);:u-;.pNp=">
+                          <field name="NUM">0.01</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO">
+                        <block type="math_change" id="/)G]2q+oSc~y9{olHLny">
+                          <field name="VAR" id="qm1YgBR^xo)GZ~0R5A2+">fov</field>
+                          <value name="DELTA">
+                            <shadow type="math_number" id="lQ5r5fc;CcE]kC7AADKq">
+                              <field name="NUM">1</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="controls_if" id="thk3BN^b+$Wv1=xaaY!z">
+                              <value name="IF0">
+                                <block type="logic_compare" id="|,TvixAN=5~_LOt7e27@">
+                                  <field name="OP">GTE</field>
+                                  <value name="A">
+                                    <block type="getCameraParam" id="Q60;fNQ4)CEkOE)(`yx^">
+                                      <field name="TYPE">FIELD_OF_VIEW</field>
+                                      <value name="OBJECT">
+                                        <shadow type="objectList" id="YBze:oKqjKVfLI~V;|};">
+                                          <field name="FIELDNAME">Camera</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id="B=x(*;3.?LocqL4OV0Bd">
+                                      <field name="NUM">29</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <statement name="DO0">
+                                <block type="variables_set" id="O+paC2pk/``QH6Ok:nMy">
+                                  <field name="VAR" id="qm1YgBR^xo)GZ~0R5A2+">fov</field>
+                                  <value name="VALUE">
+                                    <block type="math_number" id="G5Gudq@:uK0vK]G2*}+U">
+                                      <field name="NUM">30</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="controls_flow_statements" id="!8LVyvwg*/2[1n?VBJD*">
+                                      <field name="FLOW">BREAK</field>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </statement>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="846" viewport-y="28" viewport-w="576" viewport-h="410.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
